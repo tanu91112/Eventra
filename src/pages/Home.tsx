@@ -29,7 +29,8 @@ const Home = () => {
     { id: 'career', name: 'Career' },
     { id: 'cultural', name: 'Cultural' },
     { id: 'wellness', name: 'Wellness' },
-    { id: 'sports', name: 'Sports' }
+    { id: 'sports', name: 'Sports' },
+    { id: 'gssoc', name: 'GSSOC Registration' }
   ];
 
   useEffect(() => {
@@ -42,27 +43,72 @@ const Home = () => {
   useEffect(() => {
     // Mock data for events
     const mockEvents: Event[] = [
+      // Academic Events
       {
         id: '1',
         title: 'Tech Symposium 2024',
         description: 'Annual technology conference featuring industry leaders and workshops',
         date: '2024-05-15',
         time: '10:00 AM',
-        venue: 'Main Auditorium',
+        venue: 'AB2 Auditorium',
         location: 'Engineering Block',
         category: 'Academic',
         capacity: 200,
         registered: 150,
         image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
-        club: 'Computer Science Club'
+        club: 'GSSOC Club'
       },
       {
         id: '2',
+        title: 'Research Paper Writing Workshop',
+        description: 'Learn the art of academic writing and research methodology',
+        date: '2024-05-18',
+        time: '2:00 PM',
+        venue: 'AB Auditorium',
+        location: 'Central Library',
+        category: 'Academic',
+        capacity: 100,
+        registered: 75,
+        image: 'https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1473&q=80',
+        club: 'Research Society'
+      },
+      {
+        id: '3',
+        title: 'Mathematics Olympiad',
+        description: 'Annual mathematics competition for students',
+        date: '2024-05-22',
+        time: '9:00 AM',
+        venue: 'AB2 Auditorium',
+        location: 'Science Block',
+        category: 'Academic',
+        capacity: 150,
+        registered: 120,
+        image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        club: 'Mathematics Club'
+      },
+      {
+        id: '4',
+        title: 'Science Fair 2024',
+        description: 'Showcase of innovative science projects and experiments',
+        date: '2024-05-25',
+        time: '11:00 AM',
+        venue: 'AB Auditorium',
+        location: 'Science Block',
+        category: 'Academic',
+        capacity: 300,
+        registered: 250,
+        image: 'https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        club: 'Science Society'
+      },
+
+      // Career Events
+      {
+        id: '5',
         title: 'Career Fair',
         description: 'Connect with top companies and explore internship opportunities',
         date: '2024-05-20',
         time: '9:00 AM',
-        venue: 'Student Center',
+        venue: 'AB2 Auditorium',
         location: 'Central Campus',
         category: 'Career',
         capacity: 500,
@@ -71,23 +117,242 @@ const Home = () => {
         club: 'Career Services'
       },
       {
-        id: '3',
+        id: '6',
+        title: 'Resume Building Workshop',
+        description: 'Learn how to create an impressive resume and cover letter',
+        date: '2024-05-21',
+        time: '3:00 PM',
+        venue: 'AB Auditorium',
+        location: 'Student Services Building',
+        category: 'Career',
+        capacity: 80,
+        registered: 60,
+        image: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80',
+        club: 'Career Development Office'
+      },
+      {
+        id: '7',
+        title: 'Mock Interviews',
+        description: 'Practice your interview skills with industry professionals',
+        date: '2024-05-23',
+        time: '10:00 AM',
+        venue: 'AB2 Auditorium',
+        location: 'Career Center',
+        category: 'Career',
+        capacity: 50,
+        registered: 40,
+        image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        club: 'Career Services'
+      },
+      {
+        id: '8',
+        title: 'Entrepreneurship Summit',
+        description: 'Learn from successful entrepreneurs and pitch your ideas',
+        date: '2024-05-26',
+        time: '1:00 PM',
+        venue: 'AB Auditorium',
+        location: 'Business Block',
+        category: 'Career',
+        capacity: 200,
+        registered: 180,
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1415&q=80',
+        club: 'Entrepreneurship Club'
+      },
+
+      // Cultural Events
+      {
+        id: '9',
         title: 'Cultural Festival',
         description: 'Celebrate diversity with performances, food, and cultural exhibits',
         date: '2024-05-25',
         time: '4:00 PM',
-        venue: 'Open Air Theater',
+        venue: 'AB2 Auditorium',
         location: 'East Campus',
         category: 'Cultural',
         capacity: 1000,
         registered: 800,
         image: 'https://images.unsplash.com/photo-1511795409834-432f31197ce6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
         club: 'Cultural Society'
+      },
+      {
+        id: '10',
+        title: 'International Food Fair',
+        description: 'Taste cuisines from around the world',
+        date: '2024-05-27',
+        time: '12:00 PM',
+        venue: 'AB Auditorium',
+        location: 'Student Center',
+        category: 'Cultural',
+        capacity: 300,
+        registered: 250,
+        image: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        club: 'International Students Association'
+      },
+      {
+        id: '11',
+        title: 'Art Exhibition',
+        description: 'Showcase of student artwork and installations',
+        date: '2024-05-28',
+        time: '11:00 AM',
+        venue: 'AB2 Auditorium',
+        location: 'Fine Arts Building',
+        category: 'Cultural',
+        capacity: 150,
+        registered: 100,
+        image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1445&q=80',
+        club: 'Fine Arts Society'
+      },
+      {
+        id: '12',
+        title: 'Music Festival',
+        description: 'Live performances by student bands and artists',
+        date: '2024-05-29',
+        time: '6:00 PM',
+        venue: 'AB Auditorium',
+        location: 'West Campus',
+        category: 'Cultural',
+        capacity: 500,
+        registered: 400,
+        image: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        club: 'Music Society'
+      },
+
+      // Wellness Events
+      {
+        id: '13',
+        title: 'Yoga and Meditation Workshop',
+        description: 'Learn stress management techniques and mindfulness practices',
+        date: '2024-05-30',
+        time: '8:00 AM',
+        venue: 'AB2 Auditorium',
+        location: 'Wellness Center',
+        category: 'Wellness',
+        capacity: 40,
+        registered: 35,
+        image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1520&q=80',
+        club: 'Wellness Club'
+      },
+      {
+        id: '14',
+        title: 'Mental Health Awareness Seminar',
+        description: 'Understanding mental health and coping strategies',
+        date: '2024-05-31',
+        time: '2:00 PM',
+        venue: 'AB Auditorium',
+        location: 'Health Center',
+        category: 'Wellness',
+        capacity: 100,
+        registered: 80,
+        image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1376&q=80',
+        club: 'Mental Health Support Group'
+      },
+      {
+        id: '15',
+        title: 'Nutrition Workshop',
+        description: 'Learn about healthy eating habits and meal planning',
+        date: '2024-06-01',
+        time: '4:00 PM',
+        venue: 'AB2 Auditorium',
+        location: 'Wellness Center',
+        category: 'Wellness',
+        capacity: 30,
+        registered: 25,
+        image: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1453&q=80',
+        club: 'Nutrition Club'
+      },
+      {
+        id: '16',
+        title: 'Stress Management Workshop',
+        description: 'Techniques to manage academic and personal stress',
+        date: '2024-06-02',
+        time: '3:00 PM',
+        venue: 'AB Auditorium',
+        location: 'Student Services Building',
+        category: 'Wellness',
+        capacity: 60,
+        registered: 50,
+        image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        club: 'Student Wellness Center'
+      },
+
+      // Sports Events
+      {
+        id: '17',
+        title: 'Annual Sports Meet',
+        description: 'Inter-departmental sports competition',
+        date: '2024-06-03',
+        time: '9:00 AM',
+        venue: 'AB2 Auditorium',
+        location: 'Sports Block',
+        category: 'Sports',
+        capacity: 2000,
+        registered: 1500,
+        image: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        club: 'Sports Committee'
+      },
+      {
+        id: '18',
+        title: 'Basketball Tournament',
+        description: 'Inter-college basketball championship',
+        date: '2024-06-04',
+        time: '10:00 AM',
+        venue: 'AB Auditorium',
+        location: 'Sports Complex',
+        category: 'Sports',
+        capacity: 100,
+        registered: 80,
+        image: 'https://images.unsplash.com/photo-1546519638-68e109dbb01d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        club: 'Basketball Club'
+      },
+      {
+        id: '19',
+        title: 'Swimming Competition',
+        description: 'Annual swimming championship',
+        date: '2024-06-05',
+        time: '8:00 AM',
+        venue: 'AB2 Auditorium',
+        location: 'Sports Complex',
+        category: 'Sports',
+        capacity: 50,
+        registered: 40,
+        image: 'https://images.unsplash.com/photo-1575429198097-0414ec08e8cd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        club: 'Swimming Club'
+      },
+      {
+        id: '20',
+        title: 'Cricket Match',
+        description: 'Inter-university cricket tournament',
+        date: '2024-06-06',
+        time: '2:00 PM',
+        venue: 'AB Auditorium',
+        location: 'Sports Complex',
+        category: 'Sports',
+        capacity: 500,
+        registered: 400,
+        image: 'https://images.unsplash.com/photo-1531415074968-036ba1b575da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+        club: 'Cricket Club'
       }
     ];
 
-    setEvents(mockEvents);
-    setFilteredEvents(mockEvents);
+    // Add GSSOC Registration event
+    const gssocEvent: Event = {
+      id: '21',
+      title: 'GSSOC 2024 Registration',
+      description: 'Register for GirlScript Summer of Code 2024 - A 3-month long Open Source Program',
+      date: '2024-03-01',
+      time: '12:00 PM',
+      venue: 'Online',
+      location: 'Virtual',
+      category: 'GSSOC',
+      capacity: 10000,
+      registered: 5000,
+      image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80',
+      club: 'GirlScript Foundation'
+    };
+
+    const allEvents = [...mockEvents, gssocEvent];
+    setEvents(allEvents);
+    setFilteredEvents(allEvents);
     setLoading(false);
   }, []);
 
@@ -102,6 +367,12 @@ const Home = () => {
   const fadeIn = `transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`;
 
   const handleRegister = async (eventId: string) => {
+    // Special handling for GSSOC registration
+    if (eventId === '21') {
+      window.open('https://shorturl.at/Vtadn', '_blank');
+      return;
+    }
+
     try {
       const response = await fetch(`/api/events/${eventId}/register`, {
         method: 'POST',
